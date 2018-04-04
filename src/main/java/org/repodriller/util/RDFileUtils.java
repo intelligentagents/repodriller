@@ -33,7 +33,7 @@ public class RDFileUtils {
 		File dir = new File(path);
 		String[] files = dir.list();
 
-		List<String> projects = new ArrayList<String>();
+		List<String> projects = new ArrayList<>();
 		for (String file : files) {
 			File possibleDir = new File(dir, file);
 			if (possibleDir.isDirectory()) {
@@ -89,6 +89,26 @@ public class RDFileUtils {
 		} catch (Exception e) {
 			throw new RuntimeException("error reading file " + f.getAbsolutePath(), e);
 		}
+	}
+
+	/**
+	 * Return the number of lines in a String
+	 * @see http://stackoverflow.com/questions/2850203/count-the-number-of-lines-in-a-java-string
+	 *
+	 * @param str
+	 * @return Number of lines in a String
+	 *
+	 */
+	public static int countLineNumbers(String str) {
+		if ((str == null || str.isEmpty())) {
+			return 0;
+		}
+		int lines = 1;
+		int pos = 0;
+		while ((pos = str.indexOf("\n", pos) + 1) != 0) {
+			lines++;
+		}
+		return lines;
 	}
 
 	/**

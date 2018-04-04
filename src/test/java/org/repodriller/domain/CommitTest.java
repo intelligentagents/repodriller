@@ -20,7 +20,7 @@ public class CommitTest {
     private Commit c3;
 
     @BeforeClass
-    public static void readPath() throws FileNotFoundException {
+    public static void readPath() {
         path = GitRepositoryTest.class.getResource("/").getPath() + "../../test-repos/git-1";
 
     }

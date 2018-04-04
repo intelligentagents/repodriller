@@ -11,7 +11,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- * If your analysis needs to work with external tools, a SimpleCommandExecutor gives you a clean way to interact with them.
+ * If your analysis needs to work with external tools, a SimpleCommandExecutor gives you a clean way to interact with
+ * them.
  * Usage:
  *  - Set environment vars with the various manipulation methods.
  *  - Execute with {@link SimpleCommandExecutor#execute}.
@@ -19,13 +20,13 @@ import org.apache.logging.log4j.Logger;
  * @author Mauricio Aniche
  */
 public class SimpleCommandExecutor {
-	private List<EnvironmentVar> envVars = null;
-	private boolean inheritEnv = false;
+	private List<EnvironmentVar> envVars;
+	private boolean inheritEnv;
 
 	private static Logger log = LogManager.getLogger(SimpleCommandExecutor.class);
 
 	public SimpleCommandExecutor() {
-		envVars = new ArrayList<EnvironmentVar>();
+		envVars = new ArrayList<>();
 		inheritEnv = false;
 	}
 
@@ -124,8 +125,8 @@ public class SimpleCommandExecutor {
  * @author Mauricio Aniche
  */
 class EnvironmentVar {
-	public String fName = null;
-	public String fValue = null;
+	public String fName;
+	public String fValue;
 
 	public EnvironmentVar(String name, String value) {
 		fName = name;
