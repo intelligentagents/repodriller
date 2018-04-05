@@ -80,7 +80,7 @@ public class CSVFile implements PersistenceMechanism {
 		/* Emit the header. */
 		this.header = header;
 		if (header != null)	{
-			log.error("Writing header");
+			log.info("Writing header");
 			try {
 				write((Object[]) header);
 			} catch (Exception e) {
