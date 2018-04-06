@@ -1,4 +1,4 @@
-package org.repodriller.tutorial.q5;
+package org.repodriller.experiment.q5;
 
 import org.repodriller.domain.Commit;
 import org.repodriller.domain.Modification;

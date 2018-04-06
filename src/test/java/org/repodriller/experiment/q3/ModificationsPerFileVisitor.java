@@ -1,4 +1,4 @@
-package org.repodriller.tutorial.q3;
+package org.repodriller.experiment.q3;
 
 import org.repodriller.domain.Commit;
 import org.repodriller.domain.Modification;

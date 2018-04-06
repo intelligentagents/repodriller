@@ -1,4 +1,4 @@
-package org.repodriller.tutorial.q4;
+package org.repodriller.experiment.q4;
 
 import org.repodriller.domain.Commit;
 import org.repodriller.persistence.PersistenceMechanism;

@@ -1,4 +1,4 @@
-package org.repodriller.tutorial.q2;
+package org.repodriller.experiment.q4;
 
 import org.repodriller.RepoDriller;
 import org.repodriller.RepositoryMining;
@@ -8,20 +8,19 @@ import org.repodriller.persistence.csv.CSVFile;
 import org.repodriller.scm.GitRepository;
 import org.repodriller.util.Constant;
 
-// Q2: In how many commits does the word "bug" appear?
-public class Q2Study implements Study {
+// Q4: What is the lines of code growth?
+public class Q4Study implements Study {
 
     public static void main(String[] args) {
-        new RepoDriller().start(new Q2Study());
+        new RepoDriller().start(new Q4Study());
     }
 
     @Override
     public void execute() {
-        String[] header = {"hash","contains_bug"};
         new RepositoryMining()
                 .in(GitRepository.singleProject(Constant.REPO_PATH))
-                .through(Commits.range("bf03fad60a26b27263fc5be23336eabd892f7e59", "5453efc2f0295bc4e36b161982297003da01c14f"))
-                .process(new CommitsWithBugVisitor(), new CSVFile(Constant.OUTPUT_PATH + "q2.csv", header))
+                .through(Commits.monthly(6))
+                .process(new LinesOfCodeVisitor(), new CSVFile(Constant.OUTPUT_PATH + "q4.csv"))
                 .mine();
     }
 }

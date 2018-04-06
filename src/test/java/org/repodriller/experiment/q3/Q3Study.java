@@ -1,4 +1,4 @@
-package org.repodriller.tutorial.q3;
+package org.repodriller.experiment.q3;
 
 import org.repodriller.RepoDriller;
 import org.repodriller.RepositoryMining;
@@ -19,6 +19,7 @@ public class Q3Study implements Study {
 
     @Override
     public void execute() {
+
         ModificationsPerFileVisitor visitor = new ModificationsPerFileVisitor();
 
         new RepositoryMining()
